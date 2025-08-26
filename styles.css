@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: white;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.role-card {
+    perspective: 1000px;
+    height: 320px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.card-front {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back {
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 1rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 2;
+}
+
+.role-card:hover .card-back,
+.role-card.flipped .card-back {
+    opacity: 1;
+}
+
+.role-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.role-card:hover .role-image {
+    transform: scale(1.1);
+}
+
+.role-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    height: 2.4em;
+    display: flex;
+    align-items: center;
+}
+
+.role-name-back {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ecf0f1;
+    margin-bottom: 0.6rem;
+    text-align: center;
+}
+
+.role-archetype {
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.archetype-town {
+    background: #64911c;
+    color: white;
+}
+
+.archetype-mafia {
+    background: #973437;
+    color: white;
+}
+
+.archetype-neutral {
+    background: #115680;
+    color: white;
+}
+
+.alignment-title {
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-bottom: 0.6rem;
+    text-align: center;
+    /* color: #fffa9c; */
+    color: #ecf0f1;
+}
+
+.win-condition {
+    font-size: 0.8rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-top: 0.6rem;
+    text-align: center;
+    color: #b1b8b9;
+}
+
+.abilities-list {
+    list-style: none;
+    flex: 1;
+}
+
+.abilities-list li {
+    display: block; /* Add this */
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.8rem;
+    padding: 0.4rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    width: 100%;
+}
+
+.abilities-list li:last-child {
+    margin-bottom: 0;
+}
+
+.flip-hint {
+    text-align: center;
+    color: #bdc3c7;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 1rem;
+}
