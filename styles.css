@@ -146,7 +146,6 @@ header p {
     font-weight: normal;
     margin-bottom: 0.6rem;
     text-align: center;
-    /* color: #fffa9c; */
     color: #ecf0f1;
 }
 
@@ -162,10 +161,11 @@ header p {
 .abilities-list {
     list-style: none;
     flex: 1;
+    width: 100%;
 }
 
 .abilities-list li {
-    display: block; /* Add this */
+    display: block;
     background: rgba(255, 255, 255, 0.1);
     margin-bottom: 0.8rem;
     padding: 0.4rem;

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Assignment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <h1>Little Miss Mafia Role Assigner</h1>
+        <p>Configure dynamic role lists and assign roles randomly</p>
+    </header>
+
+    <div class="container">
+        <div class="config-section">
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="roleListInput">Role List Configuration</label>
+                    <div class="input-description">
+                        Enter each role slot on a new line.
+                    </div>
+                    <textarea id="roleListInput" class="role-list-input"
+                        placeholder="Town Investigative&#10;Town Protective&#10;Town Support/Disruptive&#10;Town Non-Power&#10;Mafia Support/Disruptive&#10;Mafia Investigative/Deceptive&#10;Neutral Any"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="playerListInput">Player Names</label>
+                    <div class="input-description">
+                        Enter each player name on a new line. They will be assigned to roles randomly.
+                    </div>
+                    <textarea id="playerListInput" class="role-list-input"
+                        placeholder="Alice&#10;Bob&#10;Charlie&#10;Diana&#10;Eve&#10;Frank&#10;Grace"></textarea>
+                </div>
+            </div>
+
+            <div class="seed-container">
+                <div class="seed-input-area">
+                    <label for="seedInput">Seed (optional)</label>
+                    <div class="input-description">Enter a seed for reproducible results. Leave blank for random.</div>
+                    <input type="text" id="seedInput" class="seed-input" placeholder="my-seed-123">
+                </div>
+
+                <button id="assignBtn" class="assign-btn" disabled>Assign Roles</button>
+            </div>
+
+
+        </div>
+
+        <div id="loadingMessage" class="loading-message" style="display: none;">
+            Loading roles...
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+        <div id="results" class="results-section"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
