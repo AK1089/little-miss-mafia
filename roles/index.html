@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Little Miss Mafia</h1>
+        <p>Role Explorer</p>
+    </header>
+
+    <div class="container">
+        <div class="role-container">
+            <button id="prevBtn" class="nav-arrow nav-left">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </button>
+
+            <div class="role-card">
+                <div class="role-left">
+                    <div class="role-image-container">
+                        <img id="roleImage" src="" alt="" class="role-image">
+                    </div>
+                    <div class="role-name-container">
+                        <h2 id="roleName" class="role-name"></h2>
+                    </div>
+                    <span id="genderIcon" class="gender-icon"></span>
+                    <div id="roleArchetype" class="role-archetype"></div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="role-right">
+                    <div class="role-section">
+                        <h3 class="section-title">Lore</h3>
+                        <div id="roleLore" class="section-content">
+                            blah blah blah blah blah
+                        </div>
+                    </div>
+
+                    <div class="role-section">
+                        <h3 class="section-title">Abilities</h3>
+                        <div id="roleAbilities" class="section-content abilities-list">
+                            <!-- Abilities will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="role-section">
+                        <h3 class="section-title">Win Condition</h3>
+                        <div id="roleWincon" class="section-content">
+                            <!-- Win condition will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="nextBtn" class="nav-arrow nav-right">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div id="loadingMessage" class="loading-message" style="display: none;">
+            Loading roles...
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
