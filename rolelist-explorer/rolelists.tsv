@@ -1,0 +1,20 @@
+Town Investigative	Town Investigative	Town Investigative	Town Power	Town Power	Town Power	Town Power	Town Power	Town Power	Town Power	Town Power	Town Power	Town Power	Town Power	Town Power
+Town Protective	Town Prot/Kill	Town Prot/Kill	Town Investigative	Town Investigative	Town Investigative	Town Investigative	Town Investigative	Town Investigative	Town Investigative	Town Investigative	Town Investigative	Town Investigative	Town Power/Prot/Kill	Town Power
+Town Supp/Dis	Town Supp/Dis/Comm	Town Killing	Town Prot/Kill	Town Protective	Town Prot/Kill	Town Prot/Kill	Town Prot/Kill	Town Prot/Kill	Town Prot/Kill	Town Protective	Town Investigative	Town Investigative	Town Investigative	Town Investigative
+Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Investigative	Town Killing	Town Supp/Dis/Comm	Town Supp/Dis/Comm	Town Support	Town Support	Town Support	Town Killing	Town Protective	Town Protective	Town Investigative	Town Investigative
+Mafia Supp/Dis	Mafia Supp/Dis	Town Non-Power	Town Non-Power	Town Non-Investigative	Town Non-Power	Town Non-Power	Town Dis/Comm	Town Dis/Comm	Town Dis/Comm	Town Support	Town Killing	Town Killing	Town Protective	Town Protective
+Mafia Inv/Dec	Mafia Inv/Dec	Mafia Supp/Dis	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Investigative	Town Dis/Comm	Town Support	Town Support	Town Killing	Town Killing
+	Neutral Benign	Mafia Inv/Dec	Mafia Prot/Kill/Supp/Dis	Mafia Supp/Dis	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Investigative	Town Disruptive	Town Disruptive	Town Support	Town Support
+		Neutral Evil	Mafia Supp/Dis/Inv/Dec	Mafia Inv/Dec	Mafia Non-Killing	Mafia Any	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power	Town Communicative	Town Communicative	Town Disruptive	Town Disruptive
+			Neutral Evil/Killing	Neutral Benign	Mafia Supp/Dis	Mafia Non-Killing	Mafia Any	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power	Town Communicative	Town Communicative
+				Neutral Evil	Mafia Inv/Dec	Mafia Inv/Dec	Mafia Supp/Dis	Mafia Any	Mafia Any	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power
+					Neutral Evil	Neutral Benign	Mafia Inv/Dec	Mafia Prot/Supp/Dis	Mafia Supp/Dis	Mafia Any	Town Non-Power	Town Non-Power	Town Non-Power	Town Non-Power
+						Neutral Evil	Neutral Evil	Mafia Inv/Dec	Mafia Investigative	Mafia Supp/Dis	Mafia Any	Mafia Any	Town Non-Power	Town Non-Power
+							Neutral Killing	Neutral Evil	Mafia Deceptive	Mafia Investigative	Mafia Supp/Dis	Mafia Supp/Dis	Mafia Any	Mafia Any
+								Neutral Killing	Neutral Benign/Evil	Mafia Deceptive	Mafia Investigative	Mafia Investigative	Mafia Supp/Dis	Mafia Supp/Dis
+									Neutral Killing	Neutral Evil	Mafia Deceptive	Mafia Deceptive	Mafia Investigative	Mafia Inv/Dec
+										Neutral Killing	Neutral Evil	Neutral Benign	Mafia Deceptive	Mafia Investigative
+											Neutral Killing	Neutral Evil	Neutral Benign/Evil	Mafia Deceptive
+												Neutral Killing	Neutral Evil	Neutral Benign
+													Neutral Killing	Neutral Evil
+														Neutral Killing
