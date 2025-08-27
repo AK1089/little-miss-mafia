@@ -34,20 +34,20 @@ class RoleShowcase {
         card.innerHTML = `
             <div class="card-inner">
                 <div class="card-front">
-                <h2 class="role-name">${role.name}</h2>
-                <img src=".${role.image}" 
-                alt="${role.name}" 
-                class="role-image">
-                <span class="role-archetype archetype-${alignment}">${alignment}</span>
+                    <h2 class="role-name">${role.name}</h2>
+                    <img src=".${role.image}" 
+                    alt="${role.name}" 
+                    class="role-image">
+                    <span class="role-archetype archetype-${alignment}">${alignment}</span>
                 </div>
                 <div class="card-back">
-                    <h2 class="role-name-back">${role.name}</h2>
+                    <h2 class="role-name-back"><a href="/roles?id=${role.id}">${role.name}</a></h2>
                     <h2 class="alignment-title">Alignment: ${role.archetype}</h2>
                     <ul class="abilities-list">
                     ${role.abilities.map(ability => `<li>${ability}</li>`).join('')}
                     </ul>
                     <h2 class="win-condition">Win Condition: ${role.wincon}</h2>
-                    </div>
+                </div>
             </div>
         `;
 
