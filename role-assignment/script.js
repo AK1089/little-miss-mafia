@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     await loadRoles();
     updateAssignButton();
 
-    // bind command-enter to assign button
-    document.getElementById('roleListInput').addEventListener('keydown', function(event) {
+    // bind command-enter to assign button anywhere on the page
+    document.addEventListener('keydown', function(event) {
         if (event.key === 'Enter' && event.metaKey) {
             event.preventDefault();
             assignRoles();
@@ -54,7 +54,7 @@ async function loadRoles() {
         loadingDiv.style.display = 'block';
         errorDiv.style.display = 'none';
         
-        const response = await fetch('/roles.json');
+        const response = await fetch('./../roles.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
