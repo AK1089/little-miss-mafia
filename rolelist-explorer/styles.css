@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    color: white;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.players-label {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #f5f5f5;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:hover:not(:disabled) {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.control-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.player-count {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    min-width: 3rem;
+    text-align: center;
+}
+
+.alignment-summary {
+    color: white;
+    font-size: 1rem;
+    position: relative;
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.alignment-summary::before,
+.alignment-summary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 2px;
+    background: white;
+}
+
+.alignment-summary::before {
+    left: -60px;
+}
+
+.alignment-summary::after {
+    right: -60px;
+}
+
+.rolelist-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.role-box {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    min-height: 400px;
+}
+
+.role-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.role-list li {
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.town-role {
+    background: #64911c;
+    color: white;
+}
+
+.mafia-role {
+    background: #973437;
+    color: white;
+}
+
+.neutral-role {
+    background: #115680;
+    color: white;
+}
+
+.copy-hint {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.copy-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.copy-notification.show {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .rolelist-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .alignment-summary::before,
+    .alignment-summary::after {
+        width: 30px;
+    }
+
+    .alignment-summary::before {
+        left: -40px;
+    }
+
+    .alignment-summary::after {
+        right: -40px;
+    }
+}

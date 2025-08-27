@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolelist Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="../favicon.png">
+</head>
+<body>
+    <header>
+        <h1>Little Miss Mafia</h1>
+        <p>Rolelist Explorer</p>
+    </header>
+
+    <div class="container">
+        <div class="controls">
+            <div class="player-controls">
+                <span class="players-label">Players:</span>
+                <button id="decreaseBtn" class="control-btn">−</button>
+                <span id="playerCount" class="player-count">8</span>
+                <button id="increaseBtn" class="control-btn">+</button>
+            </div>
+            
+            <div class="alignment-summary">
+                <span id="alignmentText">5 Town, 2 Mafia, 1 Neutral</span>
+            </div>
+        </div>
+
+        <div class="rolelist-container">
+            <div class="column">
+                <div class="role-box town-box">
+                    <ul id="townRoles" class="role-list"></ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="role-box evil-box">
+                    <ul id="evilRoles" class="role-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="copyNotification" class="copy-notification">
+        Copied to clipboard!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
