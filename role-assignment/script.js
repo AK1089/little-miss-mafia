@@ -223,7 +223,7 @@ function displayResults(assignments) {
                     <div class="card-inner">
                         <div class="card-front">
                             <h2 class="role-name">${role.name}</h2>
-                            <img src="${role.image}" 
+                            <img src="..${role.image}" 
                                  alt="${role.name}" 
                                  class="role-image">
                             <span class="role-archetype archetype-${alignment}">${alignment}</span>
