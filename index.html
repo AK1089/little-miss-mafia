@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,21 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
+
 <body>
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="." class="nav-link active">Role Summary</a>
+            <a href="roles" class="nav-link">View Role Details</a>
+            <a href="rolelist-explorer" class="nav-link">Rolelists</a>
+            <a href="role-assignment" class="nav-link">Assign Roles</a>
+        </div>
+    </nav>
     <header>
         <h1>Little Miss Mafia</h1>
         <p>Hover or click on any role to see its details!</p>
     </header>
-    
+
     <main>
         <div id="role-grid" class="role-grid">
             <!-- roles inserted here by script -->
@@ -21,4 +31,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

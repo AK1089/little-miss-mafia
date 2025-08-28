@@ -23,7 +23,7 @@ def convert_tsv_to_json(input_file, output_file):
                 role_entry = {
                     "id": role_id,
                     "name": name,
-                    "image": f"images/Artboard {role_id}.svg",
+                    "image": f"/images/Artboard {role_id}.svg",
                     "abilities": abilities,
                     "archetype": f"{archetype}",
                     "wincon": wincon
