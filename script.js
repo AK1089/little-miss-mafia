@@ -2,76 +2,222 @@ class RoleShowcase {
     constructor() {
         this.roles = [];
         this.gridElement = document.getElementById('role-grid');
+        this.statusEl = null;
+        this.state = {
+            includedArchetypes: new Set(),
+            gender: 'both',
+            sortBy: 'rolelist',
+        };
+        this.archetypesOrdered = [];
         this.init();
     }
 
     async init() {
         await this.loadRoles();
+        this.computeArchetypes();
+        this.mountArchetypeMenu();
+        this.attachControlEvents();
+        this.setupGridSizing();
+        this.resetFilters(false);
         this.renderRoles();
-        this.setupEventListeners();
     }
 
     async loadRoles() {
         const response = await fetch('roles.json');
-        this.roles = await response.json();
+        this.roles = (await response.json()).map((r, idx) => ({ ...r, __idx: idx }));
+    }
+
+    computeArchetypes() {
+        const seen = new Set();
+        for (const r of this.roles) {
+            if (!seen.has(r.archetype)) {
+                this.archetypesOrdered.push(r.archetype);
+                seen.add(r.archetype);
+            }
+        }
+    }
+
+    mountArchetypeMenu() {
+        const menu = document.getElementById('archetypeMenu');
+        menu.innerHTML = '';
+
+        const hdr = document.createElement('div');
+        hdr.className = 'dropdown-actions';
+        hdr.innerHTML = `
+          <button class="tiny" id="checkAll">All</button>
+          <button class="tiny" id="uncheckAll">None</button>
+        `;
+        menu.appendChild(hdr);
+
+        for (const a of this.archetypesOrdered) {
+            const id = `a-${a.replace(/\\s+/g, '_')}`;
+            const item = document.createElement('label');
+            item.className = 'dropdown-item';
+            item.innerHTML = `
+            <input type="checkbox" class="arch" id="${id}" data-arch="${a}" checked>
+            <span>${a}</span>
+          `;
+            menu.appendChild(item);
+        }
+
+        document.getElementById('checkAll').addEventListener('click', () => {
+            menu.querySelectorAll('input.arch').forEach(cb => cb.checked = true);
+            this.syncArchetypeStateFromUI();
+        });
+        document.getElementById('uncheckAll').addEventListener('click', () => {
+            menu.querySelectorAll('input.arch').forEach(cb => cb.checked = false);
+            this.syncArchetypeStateFromUI();
+        });
+        menu.addEventListener('change', (e) => {
+            if (e.target && e.target.matches('input.arch')) {
+                this.syncArchetypeStateFromUI();
+            }
+        });
+
+        const toggle = document.getElementById('archetypeToggle');
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!expanded));
+            document.getElementById('archetypeDropdown').classList.toggle('open');
+        });
+        document.addEventListener('click', (e) => {
+            const dd = document.getElementById('archetypeDropdown');
+            if (!dd.contains(e.target)) {
+                dd.classList.remove('open');
+                document.getElementById('archetypeToggle').setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    attachControlEvents() {
+        document.getElementById('quickSelect').addEventListener('click', (e) => {
+            const btn = e.target.closest('button.pill');
+            if (!btn) return;
+            const group = btn.dataset.group;
+            const checks = [...document.querySelectorAll('#archetypeMenu input.arch')];
+            const groupBoxes = checks.filter(cb => cb.dataset.arch.startsWith(group + ' '));
+            const allSelected = groupBoxes.every(cb => cb.checked);
+            groupBoxes.forEach(cb => cb.checked = !allSelected);
+            this.syncArchetypeStateFromUI();
+        });
+
+        document.querySelectorAll('input[name="gender"]').forEach(r => {
+            r.addEventListener('change', () => {
+                this.state.gender = r.value;
+                this.renderRoles();
+            });
+        });
+
+        document.getElementById('sortBy').addEventListener('change', (e) => {
+            this.state.sortBy = e.target.value;
+            this.renderRoles();
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', () => this.resetFilters());
+
+        this.statusEl = document.getElementById('statusText');
+    }
+
+    resetFilters(shouldRender = true) {
+        this.state.includedArchetypes = new Set(this.archetypesOrdered);
+        document.querySelectorAll('#archetypeMenu input.arch').forEach(cb => cb.checked = true);
+        this.updateArchetypeCountChip();
+
+        this.state.gender = 'both';
+        document.getElementById('gender-both').checked = true;
+
+        this.state.sortBy = 'rolelist';
+        document.getElementById('sortBy').value = 'rolelist';
+
+        if (shouldRender) this.renderRoles();
+    }
+
+    syncArchetypeStateFromUI() {
+        const checked = [...document.querySelectorAll('#archetypeMenu input.arch:checked')].map(cb => cb.dataset.arch);
+        this.state.includedArchetypes = new Set(checked);
+        this.updateArchetypeCountChip();
+        this.renderRoles();
+    }
+
+    updateArchetypeCountChip() {
+        const total = this.archetypesOrdered.length;
+        const sel = this.state.includedArchetypes.size;
+        const chip = document.getElementById('archetypeCount');
+        chip.textContent = sel === total ? 'all' : `${sel}/${total}`;
+    }
+
+    passGenderFilter(role) {
+        const name = role.name.replace(/<br>/g, ' ');
+        if (this.state.gender === 'both') return true;
+        if (this.state.gender === 'girls') return name.startsWith('Little Miss');
+        if (this.state.gender === 'boys') return name.startsWith('Mr.');
+        return true;
+    }
+
+    updateStatus(currentCount) {
+        const total = this.roles.length;
+        if (!this.statusEl) this.statusEl = document.getElementById('statusText');
+        this.statusEl.textContent = currentCount === 0
+            ? 'No roles match your filters.'
+            : `${currentCount}/${total} roles displayed.`;
     }
 
     renderRoles() {
+        let list = this.roles.filter(r =>
+            this.state.includedArchetypes.has(r.archetype) && this.passGenderFilter(r)
+        );
+
+        if (this.state.sortBy === 'alpha') {
+            const clean = s => s.replace(/<br>/g, ' ').toLowerCase();
+            list = list.slice().sort((a, b) => clean(a.name).localeCompare(clean(b.name)));
+        } else {
+            list = list.slice().sort((a, b) => a.__idx - b.__idx);
+        }
+
         this.gridElement.innerHTML = '';
-        
-        this.roles.forEach(role => {
-            const cardElement = this.createRoleCard(role);
-            this.gridElement.appendChild(cardElement);
-        });
+        list.forEach(role => this.gridElement.appendChild(this.createRoleCard(role)));
+        this.updateStatus(list.length);
     }
 
     createRoleCard(role) {
         const card = document.createElement('div');
         card.className = 'role-card';
         card.dataset.roleId = role.id;
-        const alignment = role.archetype.split(" ")[0].toLowerCase();
-
+        const alignment = role.archetype.split(' ')[0].toLowerCase();
         card.innerHTML = `
-            <div class="card-inner">
-                <div class="card-front">
-                    <h2 class="role-name">${role.name}</h2>
-                    <img src=".${role.image}" 
-                    alt="${role.name}" 
-                    class="role-image">
-                    <span class="role-archetype archetype-${alignment}">${alignment}</span>
-                </div>
-                <div class="card-back">
-                    <h2 class="role-name-back"><a href="/roles?id=${role.id}">${role.name}</a></h2>
-                    <h2 class="alignment-title">Alignment: ${role.archetype}</h2>
-                    <ul class="abilities-list">
-                    ${role.abilities.map(ability => `<li>${ability}</li>`).join('')}
-                    </ul>
-                    <h2 class="win-condition">Win Condition: ${role.wincon}</h2>
-                </div>
+          <div class="card-inner">
+            <div class="card-front">
+              <h2 class="role-name">${role.name}</h2>
+              <img src=".${role.image}" alt="${role.name}" class="role-image">
+              <span class="role-archetype archetype-${alignment}">${alignment}</span>
             </div>
-        `;
-
+            <div class="card-back">
+              <h2 class="role-name-back"><a href="/roles?id=${role.id}">${role.name}</a></h2>
+              <h2 class="alignment-title">Alignment: ${role.archetype}</h2>
+              <ul class="abilities-list">
+                ${role.abilities.map(a => `<li>${a}</li>`).join('')}
+              </ul>
+              <h2 class="win-condition">Win Condition: ${role.wincon}</h2>
+            </div>
+          </div>`;
+        card.addEventListener('click', (e) => {
+            e.currentTarget.classList.toggle('flipped');
+        });
         return card;
     }
 
-    setupEventListeners() {
-        this.gridElement.addEventListener('click', (e) => {
-            const card = e.target.closest('.role-card');
-            if (card) {
-                card.classList.toggle('flipped');
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.role-card.flipped').forEach(card => {
-                    card.classList.remove('flipped');
-                });
-            }
-        });
+    setupGridSizing() {
+        const ideal = 280;
+        const calc = () => {
+            const w = this.gridElement.getBoundingClientRect().width || this.gridElement.clientWidth || 0;
+            const cols = Math.max(1, Math.floor(w / ideal));
+            this.gridElement.style.setProperty('--cols', cols);
+        };
+        new ResizeObserver(calc).observe(this.gridElement);
+        window.addEventListener('orientationchange', calc);
+        calc();
     }
+
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    new RoleShowcase();
-});
+document.addEventListener('DOMContentLoaded', () => new RoleShowcase());

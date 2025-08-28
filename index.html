@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Little Miss Mafia Roles</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="filters.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
@@ -22,6 +23,54 @@
         <h1>Little Miss Mafia</h1>
         <p>Hover or click on any role to see its details!</p>
     </header>
+
+    <section class="controls container" id="controls">
+        <div class="control-row">
+            <!-- Archetype dropdown -->
+            <div class="dropdown" id="archetypeDropdown">
+                <button class="btn" id="archetypeToggle" aria-haspopup="listbox" aria-expanded="false">
+                    Archetypes
+                    <span class="chip" id="archetypeCount">all</span>
+                </button>
+                <div class="dropdown-menu" id="archetypeMenu" role="listbox" aria-label="Archetypes"></div>
+            </div>
+
+            <!-- Quick selects -->
+            <div class="quick-select" id="quickSelect">
+                <span>Quick:</span>
+                <button class="pill" data-group="Town">Town</button>
+                <button class="pill" data-group="Mafia">Mafia</button>
+                <button class="pill" data-group="Neutral">Neutral</button>
+            </div>
+
+            <!-- Gender filter -->
+            <div class="segmented" role="group" aria-label="Gender filter">
+                <input type="radio" name="gender" id="gender-both" value="both" checked>
+                <label for="gender-both">Both</label>
+                <input type="radio" name="gender" id="gender-girls" value="girls">
+                <label for="gender-girls">Girls</label>
+                <input type="radio" name="gender" id="gender-boys" value="boys">
+                <label for="gender-boys">Boys</label>
+            </div>
+
+            <!-- Sort -->
+            <div class="sorter">
+                <label for="sortBy">Sort:</label>
+                <select id="sortBy">
+                    <option value="rolelist">By Archetype</option>
+                    <option value="alpha">Alphabetical</option>
+                </select>
+                <button class="btn ghost" id="resetBtn">Reset Filters</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="controls-status container" aria-live="polite">
+        <div class="status-row">
+            <div class="status-text" id="statusText">Showing all roles</div>
+        </div>
+    </section>
 
     <main>
         <div id="role-grid" class="role-grid">
