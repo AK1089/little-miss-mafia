@@ -1,5 +1,6 @@
 class RoleShowcase {
     constructor() {
+        this.STORAGE_KEY = 'lmm_filters_v1';
         this.roles = [];
         this.gridElement = document.getElementById('role-grid');
         this.statusEl = null;
@@ -16,9 +17,12 @@ class RoleShowcase {
         await this.loadRoles();
         this.computeArchetypes();
         this.mountArchetypeMenu();
+
+        const restored = this.loadPersistedState();
+        if (!restored) this.resetFilters(false);
+
         this.attachControlEvents();
         this.setupGridSizing();
-        this.resetFilters(false);
         this.renderRoles();
     }
 
@@ -105,12 +109,14 @@ class RoleShowcase {
             r.addEventListener('change', () => {
                 this.state.gender = r.value;
                 this.renderRoles();
+                this.saveState();
             });
         });
 
         document.getElementById('sortBy').addEventListener('change', (e) => {
             this.state.sortBy = e.target.value;
             this.renderRoles();
+            this.saveState();
         });
 
         document.getElementById('resetBtn').addEventListener('click', () => this.resetFilters());
@@ -130,6 +136,7 @@ class RoleShowcase {
         document.getElementById('sortBy').value = 'rolelist';
 
         if (shouldRender) this.renderRoles();
+        this.saveState();
     }
 
     syncArchetypeStateFromUI() {
@@ -137,6 +144,7 @@ class RoleShowcase {
         this.state.includedArchetypes = new Set(checked);
         this.updateArchetypeCountChip();
         this.renderRoles();
+        this.saveState();
     }
 
     updateArchetypeCountChip() {
@@ -160,6 +168,49 @@ class RoleShowcase {
         this.statusEl.textContent = currentCount === 0
             ? 'No roles match your filters.'
             : `${currentCount}/${total} roles displayed.`;
+    }
+
+    saveState() {
+        const payload = {
+            includedArchetypes: [...this.state.includedArchetypes],
+            gender: this.state.gender,
+            sortBy: this.state.sortBy,
+        };
+        try { localStorage.setItem(this.STORAGE_KEY, JSON.stringify(payload)); } catch (_) { }
+    }
+
+    loadPersistedState() {
+        let raw;
+        try { raw = localStorage.getItem(this.STORAGE_KEY); } catch (_) { return false; }
+        if (!raw) return false;
+
+        let data;
+        try { data = JSON.parse(raw); } catch (_) { return false; }
+
+        const validArchetypes = new Set(this.archetypesOrdered);
+        const restoredSet = new Set(
+            Array.isArray(data.includedArchetypes)
+                ? data.includedArchetypes.filter(a => validArchetypes.has(a))
+                : this.archetypesOrdered
+        );
+        const gender = (['both', 'girls', 'boys'].includes(data.gender)) ? data.gender : 'both';
+        const sortBy = (['rolelist', 'alpha'].includes(data.sortBy)) ? data.sortBy : 'rolelist';
+
+        this.state.includedArchetypes = restoredSet;
+        this.state.gender = gender;
+        this.state.sortBy = sortBy;
+
+        document.querySelectorAll('#archetypeMenu input.arch').forEach(cb => {
+            cb.checked = restoredSet.has(cb.dataset.arch);
+        });
+        this.updateArchetypeCountChip();
+
+        document.getElementById('gender-both').checked = gender === 'both';
+        document.getElementById('gender-girls').checked = gender === 'girls';
+        document.getElementById('gender-boys').checked = gender === 'boys';
+        document.getElementById('sortBy').value = sortBy;
+
+        return true;
     }
 
     renderRoles() {
