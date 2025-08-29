@@ -4,21 +4,28 @@
         "name": "Mr. Good",
         "image": "/images/Artboard 62.svg",
         "abilities": [
-            "At any time, you may reveal yourself to the town as Mr Good. Henceforth, your vote will count for 3.",
-            "You may not join any night chats once you have revealed yourself."
+            "At any time during the day, you may reveal yourself to the town as Mr Good (which will be host-confirmed). Henceforth, your vote will count for 3.",
+            "You may not join or be invited to any night chats once you have revealed yourself."
+        ],
+        "fullAbilities": [
+            "At any time during the day, you may reveal yourself to the town as Mr Good (which will be host-confirmed). Henceforth, your vote will count for 3.",
+            "You may not join or be invited to any night chats once you have revealed yourself."
         ],
         "archetype": "Town Power",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 67,
         "name": "Mr. Impossible",
         "image": "/images/Artboard 67.svg",
         "abilities": [
-            "Once per game, you may choose a dead player to revive. They die at the end of the next night."
+            "Once per game, you can choose a dead player to revive. They die at the end of the next night."
+        ],
+        "fullAbilities": [
+            "Once per game, you can choose a dead player to revive. They die at the end of the next night."
         ],
         "archetype": "Town Power",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 94,
@@ -29,8 +36,13 @@
             "Twice per game, you may deal a strong attack to your jailed captive.",
             "You may not capture the same player twice."
         ],
+        "fullAbilities": [
+            "Capture a player for the night and talk to them anonymously.",
+            "Twice per game, you may deal a strong attack to your jailed captive.",
+            "You may not capture the same player twice."
+        ],
         "archetype": "Town Power",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 45,
@@ -39,8 +51,11 @@
         "abilities": [
             "Choose a player to bounce off. You bounce along their visit chain, visiting each player in turn, until the chain ends or repeats. Learn the alignment of the final player."
         ],
+        "fullAbilities": [
+            "Choose a player to bounce off. You bounce along their visit chain, visiting each player in turn, until the chain ends or repeats. Learn the alignment of the final player."
+        ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 53,
@@ -49,8 +64,11 @@
         "abilities": [
             "Visit a player to investigate them, narrowing down their role to five possibilities."
         ],
+        "fullAbilities": [
+            "Visit a player to investigate them, narrowing down their role to five possibilities."
+        ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 9,
@@ -60,8 +78,12 @@
             "Visit two players. You learn whether they are the same alignment.",
             "You may not visit the same player twice."
         ],
+        "fullAbilities": [
+            "Visit two players. You learn whether they are the same alignment.",
+            "You may not visit the same player twice."
+        ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 10,
@@ -70,8 +92,11 @@
         "abilities": [
             "Visit a player. You learn the identities of anyone visiting them for the first time."
         ],
+        "fullAbilities": [
+            "Visit a player. You learn the identities of anyone visiting them for the first time."
+        ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 59,
@@ -80,20 +105,28 @@
         "abilities": [
             "Visit a player with the intent of investigating them, although you immediately forget what you have learned.",
             "Anyone who visits you is also lost to your memory.",
-            "Once per game, you may spend a night recalling the roles you have forgotten (but not the corresponding players). Each role is only listed once, even if it is in your memory multiple times."
+            "Once per game, you may spend a night recalling the roles you have forgotten (but not the corresponding players). *Each role is only listed once, even if it is in your memory multiple times."
+        ],
+        "fullAbilities": [
+            "Visit a player with the intent of investigating them, although you immediately forget what you have learned.",
+            "Anyone who visits you is also lost to your memory.",
+            "Once per game, you may spend a night recalling the roles you have forgotten (but not the corresponding players). *Each role is only listed once, even if it is in your memory multiple times."
         ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 61,
         "name": "Mr. Fussy",
         "image": "/images/Artboard 61.svg",
         "abilities": [
-            "Visit three players. If they are all different alignments, you learn each of their roles; otherwise, you learn nothing."
+            "Visit three players. If they are all of different alignments, you learn each of their roles; otherwise, you learn nothing."
+        ],
+        "fullAbilities": [
+            "Visit three players. If they are all of different alignments, you learn each of their roles; otherwise, you learn nothing."
         ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 20,
@@ -102,8 +135,11 @@
         "abilities": [
             "Choose any dead player. You learn their night results from the phase they died."
         ],
+        "fullAbilities": [
+            "Choose any dead player. You learn their night results from the phase they died."
+        ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 69,
@@ -112,39 +148,52 @@
         "abilities": [
             "Thrice per game, you may learn either the role names OR identities (your choice) of everyone who visits you."
         ],
+        "fullAbilities": [
+            "Thrice per game, you may learn either the role names OR identities (your choice) of everyone who visits you."
+        ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 25,
         "name": "Little Miss<br>Princess",
         "image": "/images/Artboard 25.svg",
         "abilities": [
-            "Choose any set of 4 players. You learn whether the group consists of more boys, more girls, or an even split."
+            "Choose any set of 4 living players. You learn whether the group consists of more boys, more girls, or an even split."
+        ],
+        "fullAbilities": [
+            "Choose any set of 4 living players. You learn whether the group consists of more boys, more girls, or an even split."
         ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 29,
         "name": "Little Miss<br>Shy",
         "image": "/images/Artboard 29.svg",
         "abilities": [
-            "Each night, you learn the names of any other players visited by the Mafia at least once that cycle.",
+            "Each night, you learn the names of any other players visited by the Mafia that cycle. *If someone is visited multiple times, they only show up once.",
+            "You cannot speak in night chats (though you may be added to them)."
+        ],
+        "fullAbilities": [
+            "Each night, you learn the names of any other players visited by the Mafia that cycle. *If someone is visited multiple times, they only show up once.",
             "You cannot speak in night chats (though you may be added to them)."
         ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 42,
         "name": "Little Miss<br>Wise",
         "image": "/images/Artboard 42.svg",
         "abilities": [
-            "Visit a player to learn the archetype of their role (but not their alignment)."
+            "Visit a player to learn the archetype of their role (but not their alignment). *Archetypes are combined as ..."
+        ],
+        "fullAbilities": [
+            "Visit a player to learn the archetype of their role (but not their alignment). *Archetypes are combined as ..."
         ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 95,
@@ -152,10 +201,14 @@
         "image": "/images/Artboard 95.svg",
         "abilities": [
             "Check a player's alignment.",
-            "The alignment you learn will be wrong."
+            "The alignment you learn will be wrong. *(It will be randomly selected from the two incorrect alignments.)"
+        ],
+        "fullAbilities": [
+            "Check a player's alignment.",
+            "The alignment you learn will be wrong. *(It will be randomly selected from the two incorrect alignments.)"
         ],
         "archetype": "Town Investigative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 46,
@@ -163,10 +216,14 @@
         "image": "/images/Artboard 46.svg",
         "abilities": [
             "Visit a player to protect them.",
-            "If they are attacked, you will take the attack on their behalf, and deal an attack to their attacker."
+            "If they are attacked directly, you will take the attack on their behalf, and deal an attack to their attacker."
+        ],
+        "fullAbilities": [
+            "Visit a player to protect them.",
+            "If they are attacked directly, you will take the attack on their behalf, and deal an attack to their attacker."
         ],
         "archetype": "Town Protective",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 47,
@@ -176,8 +233,12 @@
             "Visit a player to protect them from attacks.",
             "The first time you are attacked, you automatically choose to protect yourself instead."
         ],
+        "fullAbilities": [
+            "Visit a player to protect them from attacks.",
+            "The first time you are attacked, you automatically choose to protect yourself instead."
+        ],
         "archetype": "Town Protective",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 68,
@@ -188,18 +249,26 @@
             "Jelly lasts indefinitely until attacked, but you may only have jelly on two people at a time.",
             "During the day, remove jelly from a player."
         ],
+        "fullAbilities": [
+            "Coat someone in protective jelly, saving them from the next standard attack they incur.",
+            "Jelly lasts indefinitely until attacked, but you may only have jelly on two people at a time.",
+            "During the day, remove jelly from a player."
+        ],
         "archetype": "Town Protective",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 35,
         "name": "Little Miss<br>Sunshine",
         "image": "/images/Artboard 35.svg",
         "abilities": [
-            "Visit a player to shine radiant light at them, shielding them from evil energy. Any actions by non-town players (aside from attacks) will be unable to affect them."
+            "Visit a player to brighten their spirits, shielding them from evil energy. Any actions by non-town players (aside from attacks) will be unable to affect them."
+        ],
+        "fullAbilities": [
+            "Visit a player to brighten their spirits, shielding them from evil energy. Any actions by non-town players (aside from attacks) will be unable to affect them."
         ],
         "archetype": "Town Protective",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 65,
@@ -209,8 +278,12 @@
             "Once during the game, you may protect yourself and deal a standard attack to everyone who visits you. This action cannot be roleblocked.",
             "For each player you attack, you gain a charge of the above ability."
         ],
+        "fullAbilities": [
+            "Once during the game, you may protect yourself and deal a standard attack to everyone who visits you. This action cannot be roleblocked.",
+            "For each player you attack, you gain a charge of the above ability."
+        ],
         "archetype": "Town Killing",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 27,
@@ -220,8 +293,12 @@
             "Visit a player to scare them, dealing a standard attack.",
             "If you kill a town member you will die immediately."
         ],
+        "fullAbilities": [
+            "Visit a player to scare them, dealing a standard attack.",
+            "If you kill a town member you will die immediately."
+        ],
         "archetype": "Town Killing",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 38,
@@ -231,8 +308,12 @@
             "Twice per game, you may hop into someone's pocket during the day. They will feel you in there.",
             "At the end of the night, they are dealt a Strong attack."
         ],
+        "fullAbilities": [
+            "Twice per game, you may hop into someone's pocket during the day. They will feel you in there.",
+            "At the end of the night, they are dealt a Strong attack."
+        ],
         "archetype": "Town Killing",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 93,
@@ -241,8 +322,11 @@
         "abilities": [
             "Visit a player and guess their rolename. If you are correct, you will turn them upside-down, dealing them a standard attack. If they die, their role will not be revealed."
         ],
+        "fullAbilities": [
+            "Visit a player and guess their rolename. If you are correct, you will turn them upside-down, dealing them a standard attack. If they die, their role will not be revealed."
+        ],
         "archetype": "Town Killing",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 49,
@@ -250,10 +334,14 @@
         "image": "/images/Artboard 49.svg",
         "abilities": [
             "Twice during the game, you may choose to become untargetable. All actions on you will fail.",
-            "You learn what would have happened to you on that phase."
+            "You learn the results you would have received that night."
+        ],
+        "fullAbilities": [
+            "Twice during the game, you may choose to become untargetable. All actions on you will fail.",
+            "You learn the results you would have received that night."
         ],
         "archetype": "Town Support",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 55,
@@ -263,8 +351,12 @@
             "If you do not cast a vote during the day, your vote power is carried over to the following day. This can be stacked indefinitely.",
             "If you are lynched, any Mafia who voted for you loses their ability for the night."
         ],
+        "fullAbilities": [
+            "If you do not cast a vote during the day, your vote power is carried over to the following day. This can be stacked indefinitely.",
+            "If you are lynched, any Mafia who voted for you loses their ability for the night."
+        ],
         "archetype": "Town Support",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 13,
@@ -277,8 +369,15 @@
             "Invite a player to a night chat.",
             "You may only use each ability once."
         ],
+        "fullAbilities": [
+            "Check a player's alignment.",
+            "Protect a player.",
+            "Attack a player.",
+            "Invite a player to a night chat.",
+            "You may only use each ability once."
+        ],
         "archetype": "Town Support",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 17,
@@ -288,8 +387,12 @@
             "Thrice per game, visit a player to help them out during the day. That night, they may use a limited ability without charge, or an unlimited ability twice.",
             "You may not help the same player twice."
         ],
+        "fullAbilities": [
+            "Thrice per game, visit a player to help them out during the day. That night, they may use a limited ability without charge, or an unlimited ability twice.",
+            "You may not help the same player twice."
+        ],
         "archetype": "Town Support",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 18,
@@ -299,8 +402,12 @@
             "Visit a player to give them a hug, protecting them from attacks.",
             "While being hugged, they are unable to use any actions."
         ],
+        "fullAbilities": [
+            "Visit a player to give them a hug, protecting them from attacks.",
+            "While being hugged, they are unable to use any actions."
+        ],
         "archetype": "Town Support",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 15,
@@ -309,8 +416,11 @@
         "abilities": [
             "Visit a player to distract them, preventing them from taking any actions."
         ],
+        "fullAbilities": [
+            "Visit a player to distract them, preventing them from taking any actions."
+        ],
         "archetype": "Town Disruptive",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 63,
@@ -319,20 +429,28 @@
         "abilities": [
             "Visit a player to silently force them (and all their visitors) to target you instead."
         ],
+        "fullAbilities": [
+            "Visit a player to silently force them (and all their visitors) to target you instead."
+        ],
         "archetype": "Town Disruptive",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 74,
         "name": "Mr. Muddle",
         "image": "/images/Artboard 74.svg",
         "abilities": [
-            "Choose two players and mix up their positions.",
-            "Choose two players and mix up their targets.",
+            "Visit two players and mix up their positions.",
+            "Visit two players and mix up their targets.",
+            "You may only use one action per night and may only target each player once."
+        ],
+        "fullAbilities": [
+            "Visit two players and mix up their positions.",
+            "Visit two players and mix up their targets.",
             "You may only use one action per night and may only target each player once."
         ],
         "archetype": "Town Disruptive",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 22,
@@ -341,29 +459,41 @@
         "abilities": [
             "You can converse freely and openly with the dead during each night phase."
         ],
+        "fullAbilities": [
+            "You can converse freely and openly with the dead during each night phase."
+        ],
         "archetype": "Town Communicative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 7,
         "name": "Little Miss<br>Chatterbox",
         "image": "/images/Artboard 7.svg",
         "abilities": [
-            "During the day, create a private night chat with any number of people.",
-            "The total size of all your chats (including you) may not exceed the player count."
+            "During the day, create a private chat for the night with any number of people.",
+            "The total size of all chats you have created (including you) may not exceed the player count."
+        ],
+        "fullAbilities": [
+            "During the day, create a private chat for the night with any number of people.",
+            "The total size of all chats you have created (including you) may not exceed the player count."
         ],
         "archetype": "Town Communicative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 14,
         "name": "Little Miss<br>Fun",
         "image": "/images/Artboard 14.svg",
         "abilities": [
-            "Send out invites to your party during the day! Everyone who votes for you joins your night chat (unless you are lynched)."
+            "Send out invites to your party during the day! Everyone who votes for you joins your night chat.",
+            "If you are lynched, the party is cancelled."
+        ],
+        "fullAbilities": [
+            "Send out invites to your party during the day! Everyone who votes for you joins your night chat.",
+            "If you are lynched, the party is cancelled."
         ],
         "archetype": "Town Communicative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
         "id": 76,
@@ -372,14 +502,20 @@
         "abilities": [
             "Post anything you want in announcements (it is clear it is from a player)."
         ],
+        "fullAbilities": [
+            "Post anything you want in announcements (it is clear it is from a player)."
+        ],
         "archetype": "Town Communicative",
-        "wincon": "Eliminate all evil players."
+        "wincon": "Eliminate all threats to town."
     },
     {
-        "id": 28,
+        "id": 80,
         "name": "Mr. Quiet",
-        "image": "/images/Artboard 28.svg",
+        "image": "/images/Artboard 80.svg",
         "abilities": [
+            "You may quietly perform the faction kill without visiting your target. You cannot be roleblocked or controlled."
+        ],
+        "fullAbilities": [
             "You may quietly perform the faction kill without visiting your target. You cannot be roleblocked or controlled."
         ],
         "archetype": "Mafia Killing",
@@ -392,6 +528,9 @@
         "abilities": [
             "Pop up outside your target's house, lying in wait for a specific player. If they visit your target, you deal a standard attack, but your name is revealed to any other visitors."
         ],
+        "fullAbilities": [
+            "Pop up outside your target's house, lying in wait for a specific player. If they visit your target, you deal a standard attack, but your name is revealed to any other visitors."
+        ],
         "archetype": "Mafia Killing",
         "wincon": "Eliminate all opponents of the Mafia."
     },
@@ -402,6 +541,9 @@
         "abilities": [
             "Spin up a protective shield around a player of your choice, protecting them from standard attacks."
         ],
+        "fullAbilities": [
+            "Spin up a protective shield around a player of your choice, protecting them from standard attacks."
+        ],
         "archetype": "Mafia Protective",
         "wincon": "Eliminate all opponents of the Mafia."
     },
@@ -410,6 +552,9 @@
         "name": "Little Miss<br>Brainy",
         "image": "/images/Artboard 4.svg",
         "abilities": [
+            "Visit a player and use your big brain to deduce their role."
+        ],
+        "fullAbilities": [
             "Visit a player and use your big brain to deduce their role."
         ],
         "archetype": "Mafia Investigative",
@@ -423,6 +568,10 @@
             "Each night you learn the names of all players in night chats.",
             "Once per game, you may choose a chat to eavesdrop: you can read through it the next day."
         ],
+        "fullAbilities": [
+            "Each night you learn the names of all players in night chats.",
+            "Once per game, you may choose a chat to eavesdrop: you can read through it the next day."
+        ],
         "archetype": "Mafia Investigative",
         "wincon": "Eliminate all opponents of the Mafia."
     },
@@ -431,6 +580,9 @@
         "name": "Mr. Tall",
         "image": "/images/Artboard 91.svg",
         "abilities": [
+            "Peer over someone's shoulder to watch where they go at night and learn which players visit them."
+        ],
+        "fullAbilities": [
             "Peer over someone's shoulder to watch where they go at night and learn which players visit them."
         ],
         "archetype": "Mafia Investigative",
@@ -442,8 +594,13 @@
         "image": "/images/Artboard 1.svg",
         "abilities": [
             "You appear as town when investigated, and are immune to standard attacks.",
-            "Once per game, you may permanently become any other non-Killing Mafia role from the rolelist.",
-            "You may not perform the faction kill."
+            "You may not perform the faction kill.",
+            "Once per game, you may permanently take on any non-Killing Mafia role which is not in the game."
+        ],
+        "fullAbilities": [
+            "You appear as town when investigated, and are immune to standard attacks.",
+            "You may not perform the faction kill.",
+            "Once per game, you may permanently take on any non-Killing Mafia role which is not in the game."
         ],
         "archetype": "Mafia Support",
         "wincon": "Eliminate all opponents of the Mafia."
@@ -455,6 +612,9 @@
         "abilities": [
             "During the day, create a private night chat with any number of people."
         ],
+        "fullAbilities": [
+            "During the day, create a private night chat with any number of people."
+        ],
         "archetype": "Mafia Support",
         "wincon": "Eliminate all opponents of the Mafia."
     },
@@ -463,7 +623,10 @@
         "name": "Mr. Messy",
         "image": "/images/Artboard 72.svg",
         "abilities": [
-            "Mess up the path to someone's house. All Town members who try to visit them will have their actions fail."
+            "Mess up the path to someone's house. All Town members who try to visit them will slip and have their actions fail."
+        ],
+        "fullAbilities": [
+            "Mess up the path to someone's house. All Town members who try to visit them will slip and have their actions fail."
         ],
         "archetype": "Mafia Disruptive",
         "wincon": "Eliminate all opponents of the Mafia."
@@ -473,6 +636,10 @@
         "name": "Mr. Rude",
         "image": "/images/Artboard 81.svg",
         "abilities": [
+            "Shout over someone, bullying them into keeping quiet for the following day.",
+            "You may not target the same player twice."
+        ],
+        "fullAbilities": [
             "Shout over someone, bullying them into keeping quiet for the following day.",
             "You may not target the same player twice."
         ],
@@ -486,6 +653,9 @@
         "abilities": [
             "Once per cycle, tickle a player to prevent them from using actions that phase."
         ],
+        "fullAbilities": [
+            "Once per cycle, tickle a player to prevent them from using actions that phase."
+        ],
         "archetype": "Mafia Disruptive",
         "wincon": "Eliminate all opponents of the Mafia."
     },
@@ -494,6 +664,10 @@
         "name": "Little Miss<br>Fabulous",
         "image": "/images/Artboard 12.svg",
         "abilities": [
+            "Visit a player and give them a makeover, choosing the role they appear as when investigated and the player they appear to visit for the duration of the night.",
+            "This does not affect death announcements."
+        ],
+        "fullAbilities": [
             "Visit a player and give them a makeover, choosing the role they appear as when investigated and the player they appear to visit for the duration of the night.",
             "This does not affect death announcements."
         ],
@@ -508,6 +682,10 @@
             "Visit a player and tell them a lie: overwrite, edit or augment their night results in any way you choose.",
             "Post anything you want in announcements (it is clear it is from a player)."
         ],
+        "fullAbilities": [
+            "Visit a player and tell them a lie: overwrite, edit or augment their night results in any way you choose.",
+            "Post anything you want in announcements (it is clear it is from a player)."
+        ],
         "archetype": "Mafia Deceptive",
         "wincon": "Eliminate all opponents of the Mafia."
     },
@@ -519,6 +697,10 @@
             "Three times per game, you may tidy up a player's belongings during the night. If they die that night, their role will not be revealed.",
             "From the belongings learn their role."
         ],
+        "fullAbilities": [
+            "Three times per game, you may tidy up a player's belongings during the night. If they die that night, their role will not be revealed.",
+            "From the belongings learn their role."
+        ],
         "archetype": "Mafia Deceptive",
         "wincon": "Eliminate all opponents of the Mafia."
     },
@@ -527,7 +709,10 @@
         "name": "Mr. Funny",
         "image": "/images/Artboard 60.svg",
         "abilities": [
-            "Tell a player a joke each night."
+            "Visit a player to tell them a joke each night."
+        ],
+        "fullAbilities": [
+            "Visit a player to tell them a joke each night."
         ],
         "archetype": "Neutral Benign",
         "wincon": "Tell a joke to every living player."
@@ -537,17 +722,25 @@
         "name": "Little Miss<br>Lucky",
         "image": "/images/Artboard 21.svg",
         "abilities": [
-            "You are assigned a random non-Power town role to guard.",
+            "You are assigned a random Town member to guard.",
+            "Twice per game while alive, you may visit your ward and protect them."
+        ],
+        "fullAbilities": [
+            "You are assigned a random Town member to guard.",
             "Twice per game while alive, you may visit your ward and protect them."
         ],
         "archetype": "Neutral Benign",
-        "wincon": "Keep your charge alive at least as long as any other town member."
+        "wincon": "Keep them alive at least as long as any other town member."
     },
     {
         "id": 24,
         "name": "Little Miss<br>Neat",
         "image": "/images/Artboard 24.svg",
         "abilities": [
+            "Visit a player to learn their role.",
+            "Guess the role of every living player. You die upon making a guess, whether it is correct or incorrect."
+        ],
+        "fullAbilities": [
             "Visit a player to learn their role.",
             "Guess the role of every living player. You die upon making a guess, whether it is correct or incorrect."
         ],
@@ -562,6 +755,10 @@
             "You must survive to the end of the game.",
             "You cannot be targeted or investigated: anyone attempting to do so will have their action fail."
         ],
+        "fullAbilities": [
+            "You must survive to the end of the game.",
+            "You cannot be targeted or investigated: anyone attempting to do so will have their action fail."
+        ],
         "archetype": "Neutral Benign",
         "wincon": "Survive to the end of the game."
     },
@@ -570,7 +767,10 @@
         "name": "Little Miss<br>Bossy",
         "image": "/images/Artboard 3.svg",
         "abilities": [
-            "Choose a player and boss them around, controlling their night action or roleblocking them. They will know they have been controlled. You also learn their role."
+            "Choose a player and boss them around, controlling their night action or roleblocking them. They will know if they have been controlled. You also learn their role."
+        ],
+        "fullAbilities": [
+            "Choose a player and boss them around, controlling their night action or roleblocking them. They will know if they have been controlled. You also learn their role."
         ],
         "archetype": "Neutral Evil",
         "wincon": "Outlive every Town member."
@@ -580,6 +780,10 @@
         "name": "Little Miss<br>Naughty",
         "image": "/images/Artboard 23.svg",
         "abilities": [
+            "When you are lynched, everyone who voted for you is unable to use any actions the following night.",
+            "You may visit a player each phase and act generally naughty."
+        ],
+        "fullAbilities": [
             "When you are lynched, everyone who voted for you is unable to use any actions the following night.",
             "You may visit a player each phase and act generally naughty."
         ],
@@ -595,6 +799,11 @@
             "You may also choose to submit a private vote to override your public vote.",
             "During the night, visit a player. If they are lynched the following day (and a member of the town) you win the game."
         ],
+        "fullAbilities": [
+            "During the day, nullify the vote of one other player of your choice.",
+            "You may also choose to submit a private vote to override your public vote.",
+            "During the night, visit a player. If they are lynched the following day (and a member of the town) you win the game."
+        ],
         "archetype": "Neutral Evil",
         "wincon": "Choose a Town member and get them lynched."
     },
@@ -603,6 +812,10 @@
         "name": "Mr. Slow",
         "image": "/images/Artboard 85.svg",
         "abilities": [
+            "You may deal a standard attack from Night 2 onwards.",
+            "With each kill, you gain defence, then a Strong attack, then a permanent disguise, then roleblock/control/redirect immunity, then a standard attack during the day."
+        ],
+        "fullAbilities": [
             "You may deal a standard attack from Night 2 onwards.",
             "With each kill, you gain defence, then a Strong attack, then a permanent disguise, then roleblock/control/redirect immunity, then a standard attack during the day."
         ],
@@ -618,6 +831,11 @@
             "Visit a player nightly to infect them and all their visitors. Learn the list of sick players.",
             "When everyone alive is sick, it is announced that you are unkillable at night and may choose someone to die of sickness nightly."
         ],
+        "fullAbilities": [
+            "You begin the game sick and with resistance to standard attacks; anyone who visits you also becomes sick.",
+            "Visit a player nightly to infect them and all their visitors. Learn the list of sick players.",
+            "When everyone alive is sick, it is announced that you are unkillable at night and may choose someone to die of sickness nightly."
+        ],
         "archetype": "Neutral Killing",
         "wincon": "Kill every Town and Mafia member."
     },
@@ -629,6 +847,10 @@
             "Deal a Strong attack to a player.",
             "You are passively protected from attacks."
         ],
+        "fullAbilities": [
+            "Deal a Strong attack to a player.",
+            "You are passively protected from attacks."
+        ],
         "archetype": "Neutral Killing",
         "wincon": "Kill every Town and Mafia member."
     },
@@ -637,6 +859,10 @@
         "name": "Little Miss<br>Twins",
         "image": "/images/Artboard 40.svg",
         "abilities": [
+            "You may freely deal a standard attack to a player (without visiting them).",
+            "At night, visit another player to disguise yourself as their role. During the day, cast a second vote in private. The first time you would die, you instead lose this ability."
+        ],
+        "fullAbilities": [
             "You may freely deal a standard attack to a player (without visiting them).",
             "At night, visit another player to disguise yourself as their role. During the day, cast a second vote in private. The first time you would die, you instead lose this ability."
         ],

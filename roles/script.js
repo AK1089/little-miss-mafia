@@ -1,3 +1,19 @@
+const investigativeGroups = [
+    [46, 47, 68, 57, 90],
+    [53, 59, 42, 4, 24],
+    [9, 61, 76, 58, 39],
+    [45, 10, 35, 91, 87],
+    [29, 7, 14, 78, 77],
+    [25, 18, 63, 92, 3],
+    [65, 27, 38, 80, 85],
+    [69, 95, 93, 12, 40],
+    [62, 55, 81, 75, 23],
+    [94, 13, 17, 1, 21],
+    [49, 74, 22, 36, 72],
+    [67, 20, 15, 37, 60]
+];
+const investigatorID = 53;
+
 let rolesData = [];
 let currentRoleIndex = 0;
 
@@ -46,6 +62,15 @@ async function loadRoles() {
     }
 }
 
+function navigateToRole(roleId) {
+    const roleIndex = rolesData.findIndex(role => role.id === roleId);
+    if (roleIndex !== -1) {
+        currentRoleIndex = roleIndex;
+        updateDisplay();
+        updateURL();
+    }
+}
+
 function setupEventListeners() {
     document.getElementById('prevBtn').addEventListener('click', () => {
         currentRoleIndex = currentRoleIndex === 0 ? rolesData.length - 1 : currentRoleIndex - 1;
@@ -71,6 +96,36 @@ function setupEventListeners() {
             updateURL();
         }
     });
+}
+
+function updateInvestigativeResults(currentRole) {
+    const resultsDiv = document.getElementById('investigativeResults');
+
+    // Find the group containing this role ID
+    const group = investigativeGroups.find(group => group.includes(currentRole.id));
+
+    if (!group) {
+        resultsDiv.innerHTML = '';
+        return;
+    }
+
+    // Get the other roles in the group (excluding current role)
+    const otherRoleIds = group//.filter(id => id !== currentRole.id);
+    const otherRoles = otherRoleIds.map(id => rolesData.find(role => role.id === id)).filter(Boolean);
+
+    const investigator = rolesData.find(role => role.id === investigatorID);
+    const investigatorName = investigator ? investigator.name.replace(/<br>/g, ' ') : 'Investigator';
+
+    let html = `<h4><a href="#" onclick="navigateToRole(${investigatorID}); return false;">${investigatorName} Results</a></h4>`;
+    html += '<ul>';
+
+    otherRoles.forEach(role => {
+        const cleanName = role.name.replace(/<br>/g, ' ');
+        html += `<li><a href="#" onclick="navigateToRole(${role.id}); return false;">${cleanName}</a></li>`;
+    });
+
+    html += '</ul>';
+    resultsDiv.innerHTML = html;
 }
 
 function updateDisplay() {
@@ -157,14 +212,7 @@ function updateDisplay() {
 
     // Update win condition
     document.getElementById('roleWincon').textContent = role.wincon;
-
-    // Update navigation buttons (no longer disable, just visual indication)
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    // Remove disabled states since we now wrap around
-    prevBtn.disabled = false;
-    nextBtn.disabled = false;
+    updateInvestigativeResults(role);
 
     // Update page title
     document.title = role.name.replace(/<br>/g, ' ');

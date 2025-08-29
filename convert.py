@@ -13,10 +13,12 @@ def convert_tsv_to_json(input_file, output_file):
                 name = row[1]
                 archetype = row[2]
                 abilities_text = row[3]
-                wincon = row[4]
+                full_abilities_text = row[4]
+                wincon = row[5]
                 
                 abilities = [ability.strip() for ability in abilities_text.split(' // ')]
-                
+                full_abilities = [ability.strip() for ability in full_abilities_text.split(' // ')]
+
                 name = name.replace("Mr", "Mr.")
                 name = name.replace("Little Miss ", "Little Miss<br>")
 
@@ -25,6 +27,7 @@ def convert_tsv_to_json(input_file, output_file):
                     "name": name,
                     "image": f"/images/Artboard {role_id}.svg",
                     "abilities": abilities,
+                    "fullAbilities": full_abilities,
                     "archetype": f"{archetype}",
                     "wincon": wincon
                 }
