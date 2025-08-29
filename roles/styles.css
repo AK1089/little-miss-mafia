@@ -138,16 +138,16 @@ header {
     gap: .5rem;
 }
 
-.ability-icons {
-    display: flex;
-    gap: .5rem;
-}
-
 .ability-icon {
     width: 20px;
     height: 20px;
-    background: #ddd;
     border-radius: 3px;
+    object-fit: contain;
+    background: transparent;
+}
+
+.ability-icon[src] {
+    background: none;
 }
 
 .ability-text {
