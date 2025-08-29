@@ -189,7 +189,7 @@ function updateDisplay() {
         tags.forEach(tag => {
             const iconImg = document.createElement('img');
             iconImg.className = 'ability-icon';
-            iconImg.src = `icons/icon-${tag}.svg`;
+            iconImg.src = `icons/${tag}.svg`;
             iconImg.alt = tag;
             iconImg.title = tag; // Tooltip showing the tag name
 
