@@ -229,7 +229,7 @@ function displayResults(assignments) {
                             <span class="role-archetype archetype-${alignment}">${alignment}</span>
                         </div>
                         <div class="card-back">
-                            <h2 class="role-name-back">${role.name}</h2>
+                            <h2 class="role-name-back"><a href="../roles?id=${role.id}">${role.name}</a></h2>
                             <h2 class="alignment-title">Alignment: ${role.archetype}</h2>
                             <ul class="abilities-list">
                                 ${role.abilities.map(ability => `<li>${ability}</li>`).join('')}

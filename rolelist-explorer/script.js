@@ -56,6 +56,23 @@ function setupEventListeners() {
         }
     });
 
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            if (currentPlayerCount > minPlayers) {
+                currentPlayerCount--;
+                updateDisplay();
+            }
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            if (currentPlayerCount < maxPlayers) {
+                currentPlayerCount++;
+                updateDisplay();
+            }
+        }
+    });
+
     // Copy to clipboard with Cmd+Enter (or Ctrl+Enter on Windows)
     document.addEventListener('keydown', (e) => {
         if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
