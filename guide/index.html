@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Explorer</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="." class="nav-link active">Beginner's Guide</a>
+            <a href=".." class="nav-link">Role Summary</a>
+            <a href="../roles" class="nav-link ">View Role Details</a>
+            <a href="../rolelist-explorer" class="nav-link">Rolelists</a>
+            <a href="../role-assignment" class="nav-link">Assign Roles</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Welcome to Little Miss Mafia!</h1>
+        <p>This guide is intended for players new to the game of Mafia as a whole, but it might also be helpful to
+            experienced players looking to learn the specifics of this game.</p>
+    </header>
+
+    <div class="container">
+        <div class="guide-content">
+
+            <div class="guide-section">
+                <h3>Mafia Explained</h3>
+                <div class="guide-card">
+                    <p>Mafia is a social deduction game where players are secretly assigned roles. The
+                        <strong>Town</strong> and <strong>Mafia</strong> factions aim to eliminate each other, while
+                        <strong>Neutral</strong> players have their own win conditions.
+                    </p>
+                    <p>The Town start out in the
+                        majority, and can use their numbers to their advantage, voting out suspected Mafia members
+                        during the daytime. Meanwhile, the Mafia start out in the minority, but their abilities are
+                        powerful and they may work together in secret.
+                    </p>
+                    <p>The game alternates between <strong>Day</strong> and <strong>Night</strong> phases.</p>
+                </div>
+                <div class="guide-cards">
+                    <div class="guide-card day-card">
+                        <h4>Day Phase</h4>
+                        <ul>
+                            <li>Players may talk freely about their suspicions and results. The Town must collaborate to
+                                find out who is lying.</li>
+                            <li>From the second day, everyone votes for a player to eliminate.</li>
+                            <li>Some roles have special day abilities.</li>
+                        </ul>
+                    </div>
+                    <div class="guide-card night-card">
+                        <h4>Night Phase</h4>
+                        <ul>
+                            <li>The main chat is closed, though Mafia may still talk among themselves.</li>
+                            <li>Most roles have abilities to use. Investigative roles can gather information for their
+                                team, Killing roles can attack, and so on.</li>
+                            <li>The Mafia also chooses someone to attack.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-section">
+                <h3>Role Types</h3>
+                <div class="guide-cards">
+                    <div class="guide-card other-card">
+                        <h4>Factions</h4>
+                        <p>The game is primarily divided into three factions: Town, Mafia, and Neutral. Each player is
+                            assigned one of <strong>60</strong> possible roles at random. You can learn about each role
+                            in detail using the <i>"View Role Details"</i> tab on this page.</p>
+                        <p>Roles are further split into archetypes, which define their general purpose within their
+                            team.</p>
+                    </div>
+                    <div class="guide-card town-card">
+                        <h4>Town Roles</h4>
+                        <p><strong>Power:</strong> Unique, especially strong roles</p>
+                        <p><strong>Investigative:</strong> learn information about others</p>
+                        <p><strong>Protective:</strong> mitigate damage or other harm</p>
+                        <p><strong>Killing:</strong> deal damage to others</p>
+                        <p><strong>Disruptive:</strong> hinder other players</p>
+                        <p><strong>Communicative:</strong> create special chats</p>
+                        <p><strong>Support:</strong> help the Town in various other ways</p>
+                    </div>
+                </div>
+                <div class="guide-cards">
+                    <div class="guide-card mafia-card">
+                        <h4>Mafia Roles</h4>
+                        <p><strong>Investigative:</strong> learn information about the Town</p>
+                        <p><strong>Protective:</strong> keep fellow Mafia members safe</p>
+                        <p><strong>Killing:</strong> deal extra damage to the Town</p>
+                        <p><strong>Disruptive:</strong> get in the way of the Town</p>
+                        <p><strong>Deceptive:</strong> confuse and mislead the Town</p>
+                        <p><strong>Support:</strong> help the Mafia in various other ways</p>
+                    </div>
+                    <div class="guide-card neutral-card">
+                        <h4>Neutral Roles</h4>
+                        <p><strong>Benign:</strong> generally harmless to the Town</p>
+                        <p><strong>Evil:</strong> work against town interests</p>
+                        <p><strong>Killing:</strong> powerful killers working against both the Town and the Mafia to be
+                            the last one standing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

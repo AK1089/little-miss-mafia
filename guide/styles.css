@@ -1,0 +1,168 @@
+.guide-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header p {
+    max-width: 50%;
+    align-self: center;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.guide-section {
+    margin-bottom: 3rem;
+}
+
+.guide-section h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.guide-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.guide-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.guide-card h4 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.guide-card h5 {
+    color: #2a5298;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.guide-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.4rem;
+}
+
+.guide-card ul {
+    color: #666;
+    line-height: 1.6;
+}
+
+.guide-card li {
+    margin-bottom: 0.5rem;
+}
+
+.town-card {
+    border-left: 5px solid #64911c;
+}
+
+.mafia-card {
+    border-left: 5px solid #973437;
+}
+
+.neutral-card {
+    border-left: 5px solid #2676a8;
+}
+
+.day-card {
+    border-left: 5px solid #f39c12;
+}
+
+.night-card {
+    border-left: 5px solid #4d575e;
+}
+
+.other-card {
+    border-left: 5px solid #8e44ad;
+}
+
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tip {
+    text-align: center;
+}
+
+.getting-started-list {
+    counter-reset: step-counter;
+    list-style: none;
+    padding: 0;
+}
+
+.getting-started-list li {
+    counter-increment: step-counter;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+    position: relative;
+}
+
+.getting-started-list li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #2a5298;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.guide-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.guide-footer p {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.guide-footer a {
+    color: #87ceeb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.guide-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .guide-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .tip-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .getting-started-list li {
+        padding-left: 2.5rem;
+    }
+}
